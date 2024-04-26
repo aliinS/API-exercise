@@ -16,8 +16,8 @@
         </div>
         
         <div class="mb-4 flex flex-col w-40 gap-3">
-            <a href="{{ route('themes') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Karel's API</a>
-            <a href="{{ route('garden-tools.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add New Tool</a>
+            <a href="{{ route('themes') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Karel's API</a>
+            <a href="{{ route('garden-tools.create') }}" class="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add New Tool</a>
         </div>
 
         <table class="min-w-full divide-y divide-gray-200">
