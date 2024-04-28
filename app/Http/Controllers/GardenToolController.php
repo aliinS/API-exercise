@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\GardenTool;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 
 class GardenToolController extends Controller
@@ -51,12 +52,22 @@ class GardenToolController extends Controller
 
     public function showThemes()
     {
-        // Fetch data from the API endpoint
-        $response = Http::get('https://hajusrakendus.ta22maarma.itmajakas.ee/api/records');
+        // Define a unique cache key for themes data
+        $cacheKey = 'themes_data';
 
-        // Decode the JSON response
-        $themes = $response->json();
+        // Check if themes data is cached
+        if (Cache::has($cacheKey)) {
+            // Retrieve themes data from cache
+            $themes = Cache::get($cacheKey);
+        } else {
+            // Fetch themes data from the API endpoint
+            $response = Http::get('https://hajusrakendus.ta22maarma.itmajakas.ee/api/records');
+            $themes = $response->json();
 
+            // Cache the themes data with an expiry time (e.g., 1 hour)
+            Cache::put($cacheKey, $themes, now()->addHour());
+
+        }
         return view('karelapi', ['themes' => $themes]);
     }
 }
