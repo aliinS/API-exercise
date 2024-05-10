@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [GardenToolController::class, 'index']);
+Route::get('/', [GardenToolController::class, 'index'])->name('index');
+
 Route::get('/garden-tools/create', [GardenToolController::class, 'create'])->name('garden-tools.create');
 Route::post('/garden-tools', [GardenToolController::class, 'store'])->name('garden-tools.store');
 
