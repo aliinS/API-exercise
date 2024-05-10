@@ -25,7 +25,7 @@
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
             @foreach ($gardenTools as $tool)
-                <div class="border flex rounded-lg overflow-hidden bg-white shadow-md justify-between w-2/3 transform transition-transform duration-300 hover:scale-110 cursor-pointer">
+                <div class="border flex rounded-lg overflow-hidden bg-white shadow-md justify-between w-2/3 transform transition-transform duration-300 hover:scale-105 cursor-pointer">
                     <div class="p-4 grid grid-cols-2 gap-4">
                         <div class="col-span-2 text-lg font-bold text-gray-900 capitalize">{{ $tool->title }}</div>
                         <div class="col-span-2 text-sm text-gray-900">{{ $tool->description }}</div>
